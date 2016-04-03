@@ -164,7 +164,7 @@ else
 fi
 
 # informations
-day_date=$(date +"%Y%m%d")
+day_date=$(date +"%Y%m%d-%H%M%S")
 dir_size=$(du -sh . | sed 's/\.//')
 db_size=$(mysql -h$typo_db_host -u$typo_db_username -p$typo_db_password -D$typo_db -e'show table status;' | awk '{sum=sum+$7+$9;} END {print sum/1024/1024}')
 
